@@ -1,2 +1,3 @@
 # Full-Stack-Devlopment
-full stack devlopment course from cousera 
+- Bootrap practise.
+- Angular practise.
