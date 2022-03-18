@@ -6,9 +6,11 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { AppComponent } from './app.component';
-import { DishService } from './services/dish.service';
 import {MatButtonModule} from '@angular/material/button';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
+import { DishService } from './services/dish.service';
+import { PromotionService } from './services/promotion.service';
 
 import 'hammerjs';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
@@ -45,7 +47,10 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     AppRoutingModule
     // AngularFontAwesomeModule
   ],
-  providers: [DishService],
+  providers: [
+    DishService,
+    PromotionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
