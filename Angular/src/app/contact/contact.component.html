@@ -42,17 +42,22 @@
       <p>
         <mat-form-field class="half-width">
           <input matInput formControlName="firstname" placeholder="First Name" type="text" required>
+          <mat-error>First name is required</mat-error>
         </mat-form-field>
+
         <mat-form-field class="half-width">
           <input matInput formControlName="lastname" placeholder="Last Name" type="text" required>
+          <mat-error >Last name is required</mat-error>
         </mat-form-field>
       </p>
       <p>
         <mat-form-field class="half-width">
           <input matInput formControlName="telnum" placeholder="Tel. number" type="number" required>
+          <mat-error >Tel. number is required</mat-error>
         </mat-form-field>
         <mat-form-field class="half-width">
           <input matInput formControlName="email" placeholder="Email" type="email" required>
+          <mat-error >Email ID is required</mat-error>
         </mat-form-field>
       </p>
       <table class="form-size">
@@ -73,7 +78,8 @@
             <textarea matInput formGroupName="message" placeholder="Your Feedback" rows="12"></textarea>
           </mat-form-field>
         </p>
-        <button type="submit" mat-button class="background-primary text-floral-white">Submit</button>
+        <button type="submit" mat-button class="background-primary text-floral-white"
+           [disabled]="feedbackForm.invalid">Submit</button>
     </form>
   
   </div>
