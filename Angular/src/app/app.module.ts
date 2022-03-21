@@ -12,7 +12,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { DishService } from './services/dish.service';
@@ -60,7 +63,10 @@ import { LoginComponent } from './login/login.component';
     MatInputModule,
     MatCheckboxModule,
     FormsModule,
-    BrowserAnimationsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatSelectModule,
+    MatSlideToggleModule
 
     // AngularFontAwesomeModule
   ],
