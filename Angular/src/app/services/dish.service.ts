@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Dish } from '../Shared/dish';
 import { DISHES } from '../Shared/dishes';
+import { of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,10 +11,7 @@ export class DishService {
   constructor() { }
 
   getDishes(): Promise<Dish[]>{
-    return new Promise(resolve => {
-      // Simulate server latency with 2 second delay
-      setTimeout(() => resolve(DISHES),2000);
-    });
+    return of(DISHES).pipe(delay(2000)).toPromise();
   }
 
   getDish(id: string): Promise<Dish>{
