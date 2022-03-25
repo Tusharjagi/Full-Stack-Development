@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
@@ -66,7 +67,8 @@ import { LoginComponent } from './login/login.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatProgressSpinnerModule
 
     // AngularFontAwesomeModule
   ],
