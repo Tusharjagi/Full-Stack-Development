@@ -3,7 +3,7 @@ import { Params,ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Dish } from '../Shared/dish';
 import { DishService } from '../services/dish.service';
-import { switchMap } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 
 @Component({
@@ -24,7 +24,7 @@ export class DishdetailComponent implements OnInit {
     private location: Location) { }
 
   ngOnInit(): void {
-    this.dishService.getDishIds().subscribe((dishIds: string[]) => this.dishIds = dishIds);
+    this.dishService.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
     this.route.params.pipe(switchMap((params: Params) => this.dishService.getDish(params['id'])))
     .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); });
   }
