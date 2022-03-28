@@ -29,5 +29,8 @@ export class DishService {
     return of(DISHES.map(dish => dish.id));
 
   }
+  // putDish(dish: Dish): Observable<Dish>{
+  //   return of(dish)
+  // }
   
 }

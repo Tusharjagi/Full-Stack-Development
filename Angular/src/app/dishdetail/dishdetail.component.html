@@ -41,18 +41,19 @@
                 <mat-list>
                     <mat-list-item *ngFor="let list of dish.comments">
                         <h3 mat-line> {{list.comment}}</h3>
-                        <p mat-line> {{list.rating }}{{"Star"}} </p>
+                        <p mat-line> {{list.rating }}{{" Star"}} </p>
                         <h3 mat-line> {{list.author}}</h3>
                         <h3 mat-line> {{list.date | date}}</h3>
+     
 
                     </mat-list-item>
-                    <br>
+                
 
-                    
-                        <form >
+                        <form novalidate [formGroup]="commentForm" #fform="ngForm" (ngSubmit)="onSubmit()">
                             <p>
                             <mat-form-field  fxFlex="100">
-                              <input matInput placeholder="Name">
+                              <input matInput placeholder="Name" formControlName="author" type="text" required >
+                              <mat-error *ngIf="formErrors.author">{{formErrors.author}}</mat-error>
                             </mat-form-field>
                             </p>
 
@@ -60,24 +61,24 @@
                             <mat-slider
                            
                                 thumbLabel="formateLabel"
-                                tickInterval="1" 
+                                tickInterval="1"
                                 min="0" 
                                 max="5" 
                                 step="1" 
-                                value="1">
+                                value="5">
                             
                             </mat-slider>
                             </p>
                             
                             <p >
                             <mat-form-field fxFlex="100" rows="12">
-                                <mat-label>Your Comment</mat-label>
-                                <textarea matInput rows="12" ></textarea>
+                                <textarea matInput rows="12" formControlName="comment" placeholder="Comment" type="text" required></textarea>
+                                <mat-error *ngIf="formErrors.comment">{{formErrors.comment}}</mat-error>
                             </mat-form-field>
                             </p>
                         
                         
-                        <button mat-raised-button color="primary">Submit</button>
+                        <button mat-raised-button color="primary" type="submit" [disabled]="commentForm.invalid">Submit</button>
                     </form>
                     
                     
