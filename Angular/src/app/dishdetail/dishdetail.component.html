@@ -46,6 +46,42 @@
                         <h3 mat-line> {{list.date | date}}</h3>
 
                     </mat-list-item>
+                    <br>
+
+                    
+                        <form >
+                            <p>
+                            <mat-form-field  fxFlex="100">
+                              <input matInput placeholder="Name">
+                            </mat-form-field>
+                            </p>
+
+                            <p>
+                            <mat-slider
+                           
+                                thumbLabel="formateLabel"
+                                tickInterval="1" 
+                                min="0" 
+                                max="5" 
+                                step="1" 
+                                value="1">
+                            
+                            </mat-slider>
+                            </p>
+                            
+                            <p >
+                            <mat-form-field fxFlex="100" rows="12">
+                                <mat-label>Your Comment</mat-label>
+                                <textarea matInput rows="12" ></textarea>
+                            </mat-form-field>
+                            </p>
+                        
+                        
+                        <button mat-raised-button color="primary">Submit</button>
+                    </form>
+                    
+                    
+                    
                 </mat-list>
             </mat-card>
         </div>
