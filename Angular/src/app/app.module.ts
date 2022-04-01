@@ -39,6 +39,7 @@ import { LoginComponent } from './login/login.component';
 import { baseURL } from './Shared/baseurl';
 import { LeaderService } from './services/leader.service';
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
+import { HiglightDirective } from './directives/higlight.directive';
 
 
 
@@ -53,6 +54,7 @@ import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
     AboutComponent,
     ContactComponent,
     LoginComponent,
+    HiglightDirective,
 
   ],
   imports: [
