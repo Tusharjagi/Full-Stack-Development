@@ -16,6 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { HttpClientModule } from '@angular/common/http';
+// import { HttpModule } from '@angular/common/http';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSliderModule } from '@angular/material/slider'
@@ -34,6 +36,8 @@ import { ContactComponent } from './contact/contact.component';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginComponent } from './login/login.component';
+import { baseURL } from './Shared/baseurl';
+import { LeaderService } from './services/leader.service';
 
 
 
@@ -59,6 +63,7 @@ import { LoginComponent } from './login/login.component';
     MatCardModule,
     MatButtonModule,
     AppRoutingModule,
+    HttpClientModule,
     MatDialogModule,
     MatCheckboxModule,
     MatFormFieldModule,
@@ -70,13 +75,17 @@ import { LoginComponent } from './login/login.component';
     MatSelectModule,
     MatSlideToggleModule,
     MatProgressSpinnerModule,
-    MatSliderModule
+    MatSliderModule,
+    
+    // HttpModule
 
     // AngularFontAwesomeModule
   ],
   providers: [
     DishService,
     PromotionService,
+    LeaderService,
+    { provide:'BaseURL', useValue: baseURL}
     
   ],
   entryComponents:[
