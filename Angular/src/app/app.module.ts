@@ -20,7 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 // import { HttpModule } from '@angular/common/http';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatSliderModule } from '@angular/material/slider'
+import { MatSliderModule } from '@angular/material/slider';
 
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
