@@ -3,6 +3,7 @@ import { Promotion } from '../Shared/Promotion';
 import { PROMOTIONS } from '../Shared/promotions';
 import { Observable,of } from 'rxjs';
 import { delay } from 'rxjs/operators';
+import { baseURL } from '../Shared/baseurl';
 
 @Injectable({
   providedIn: 'root'
