@@ -1,8 +1,4 @@
-var rect = {
-    perimeter: (x,y) =>(2*(x+y)),
-    area: (x,y) => (x*y)
-
-};
+var rect = require('./Reactangle');
 
 function solveRect(l,b){
     console.log("Solving for reactangle with l " + l + "and b = " + b);
