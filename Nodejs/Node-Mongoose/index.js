@@ -16,13 +16,30 @@ connect.then((db) => {
     .then((dish) => {
         console.log(dish);
 
-        return Dishes.find({});
-    })
-    .then((dishes) => {
-        console.log(dishes);
+        return Dishes.findByIdAndUpdate(dish._id,{
+            $set:{ description: 'Updated test' },
+        },{    
+             new: true 
+        }).exec();
 
+    })
+    .then((dish) => {
+        console.log(dish);
+
+        dish.comments.push({
+            rating: 5,
+            comment:'I\'m getting a sinking feeling!',
+            author: 'Leonado di Carpaccio'
+        });
+
+        return dish.save();
+
+    })
+    .then((dish) => {
+        console.log(dish)
         return Dishes.remove({});
     })
+
     .then(() => {
         return mongoose.connection.close();
     })
