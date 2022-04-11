@@ -1,21 +1,24 @@
 const mongoose = require('mongoose');
+
 const Dishes = require('./models/dishes');
 
 const url = 'mongodb://localhost:27017/conFusion';
 const connect = mongoose.connect(url);
 
-connect.then((db)=> {
+connect.then((db) => {
+
     console.log('Connected correctly to server');
 
     var newDish = Dishes({
         name: 'Uthappizza',
         description: 'test'
     });
+
     newDish.save()
         .then((dish) => {
-            connect.log(dish);
+            console.log(dish);
 
-            Dishes.find({}).exec();
+            return Dishes.find({});
         })
         .then((dishes) => {
             console.log(dishes);
@@ -25,7 +28,8 @@ connect.then((db)=> {
         .then(() => {
             return mongoose.connection.close();
         })
-        .catch((err)=> {
+        .catch((err) => {
             console.log(err);
         });
+
 });
