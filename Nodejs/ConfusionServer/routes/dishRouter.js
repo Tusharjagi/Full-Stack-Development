@@ -166,7 +166,6 @@ dishRouter.route('/:dishId/comments')
     .catch((err) => next(err));
 });
 
-
 dishRouter.route('/:dishId/comments/:commentId')
 
 .get((req, res, next) => {
