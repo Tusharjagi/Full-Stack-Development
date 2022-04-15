@@ -17,7 +17,7 @@ dishRouter.route('/')
         res.json(dishes);
     },
     (err) => next(err))
-        .catch((err) => next(err));
+    .catch((err) => next(err));
 })
 .post((req,res,next) => {
     Dishes.create(req.body)
