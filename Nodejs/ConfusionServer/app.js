@@ -63,10 +63,9 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/users', users);
-function auth(req,res,next){
 
+function auth(req,res,next){
   if(!req.user){
-    
       var err= new Error('You are not authenticated !');
       res.setHeader('WWW-Authenticate','Basic');
       err.status = 401;
@@ -75,7 +74,6 @@ function auth(req,res,next){
   else{
     next();
   }
-
 }
 
 app.use(auth);
