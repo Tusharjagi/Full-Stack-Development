@@ -16,18 +16,23 @@ var dishRouter = require('./routes/dishRouter');
 var promoRouter = require('./routes/promoRouter');
 var leaderRouter = require('./routes/leaderRouter');
 var uploadRouter = require('./routes/uploadRouter');
+var favouriteRouter = require('./routes/favoriteRouter');
 
 const mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 
 const Dishes = require('./models/dishes');
 
 const url = config.mongoUrl;
-const connect = mongoose.connect(url);
+const connect = mongoose.connect(url, {
+  
+});
 
 connect.then((db) => {
   console.log('Connected correctly to server');
 
-},(err) => { console.log(err); });
+},(err) => { console.log(err); 
+});
 
 var app = express();
 
@@ -64,19 +69,19 @@ app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/users', users);
 
-function auth(req,res,next){
-  if(!req.user){
-      var err= new Error('You are not authenticated !');
-      res.setHeader('WWW-Authenticate','Basic');
-      err.status = 401;
-      return next(err);
-  }
-  else{
-    next();
-  }
-}
+// function auth(req,res,next){
+//   if(!req.user){
+//       var err= new Error('You are not authenticated !');
+//       res.setHeader('WWW-Authenticate','Basic');
+//       err.status = 401;
+//       return next(err);
+//   }
+//   else{
+//     next();
+//   }
+// }
 
-app.use(auth);
+// app.use(auth);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -84,10 +89,13 @@ app.use('/dishes', dishRouter);
 app.use('/promotions', promoRouter);
 app.use('/leaders', leaderRouter);
 app.use('/imageUpload', uploadRouter);
+app.use('favorites', favouriteRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
+  var err = new Error('Not Found');
   next(createError(404));
+  next(err);
 });
 
 // error handler
