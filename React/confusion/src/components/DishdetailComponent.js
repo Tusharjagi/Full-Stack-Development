@@ -6,6 +6,15 @@ class DishDetail extends Component{
         super(props);
 
         console.log(props);
+
+        // this.componentDidMount(){
+        //     console.log('Dishdetail Component componentDidMount invoke');
+        // };
+
+        // this.componentDidUpdate(){
+        //     console.log('Dishdetail Component componentDidMount invoke');
+        // }
+
         
         // stores iproperties of this component
         this.state = {
@@ -69,6 +78,7 @@ class DishDetail extends Component{
 
 
     render(){
+        
         const dish = this.props.dish
 
         console.log(dish);
