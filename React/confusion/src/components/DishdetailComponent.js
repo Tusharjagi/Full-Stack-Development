@@ -47,7 +47,7 @@ const RenderComments = ({ comments }) => {
 };
 
 const DishDetail = (props) => {
-  const dish = this.props.dish;
+  const dish = props.dish;
 
   console.log(dish);
 
