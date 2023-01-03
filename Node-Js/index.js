@@ -1,1 +1,3 @@
-console.log("hello node js");
+require("./add");
+
+console.log("Hello World");

@@ -1,13 +1,19 @@
 Terms and concepts to understand what is Node.js
     ECMAScript
+    Chrome's V8 Engine
     JavaScript Engine
     JavaScript Runtime
     Node.js
     Executing JavaScript with Node
     Node REPL (Read, Evaluate, Print, Loop)
-    
-        
+
 Modules(User defined)
+    Types of Modules
+      1) Local modules 
+          - CommonJS
+      2) Built-in modules
+      3) Third party modules
+
 Built-in modules
 Node.js internals
 npm - Node Package manager
