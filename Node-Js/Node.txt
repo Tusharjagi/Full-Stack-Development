@@ -8,6 +8,8 @@ Terms and concepts to understand what is Node.js
     Node REPL (Read, Evaluate, Print, Loop)
 
 Modules(User defined)
+    module-wrapper
+    module-caching
     Types of Modules
       1) Local modules 
           - CommonJS
