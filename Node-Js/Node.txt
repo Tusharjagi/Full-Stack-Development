@@ -10,6 +10,7 @@ Terms and concepts to understand what is Node.js
 Modules(User defined)
     module-wrapper
     module-caching
+    import export patterns
     Types of Modules
       1) Local modules 
           - CommonJS
