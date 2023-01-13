@@ -1,6 +1,3 @@
-const math = require("./math");
+const data = require("./data.json");
 
-const { add, subtract } = math;
-
-console.log(add(2, 3));
-console.log(subtract(3, 2));
+console.log(data);
