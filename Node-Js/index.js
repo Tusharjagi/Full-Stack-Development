@@ -1,3 +1,4 @@
-const data = require("./data.json");
+const path = require("node:path");
 
-console.log(data);
+console.log(__filename);
+console.log(__dirname);
